@@ -11,6 +11,7 @@ public class Main {
         boolean guessedIt = false;
         Scanner scanner = new Scanner(System.in);
         int guess;
+        int attempts = 0;
 
         do {
             String userInput = scanner.nextLine();
@@ -19,15 +20,18 @@ public class Main {
             System.out.println(userInput);
            if(numToGuess < guess){
                 System.out.println("too high");
+                attempts++;
             }
             else if(numToGuess > guess){
                 System.out.println("too low");
+                attempts++;
             }
             else{
                 System.out.println("You got it");
                 guessedIt = true;
            }
         } while (guessedIt == false);
+        System.out.println("You guessed it in "+attempts+" attempts");
 
     }
 }
